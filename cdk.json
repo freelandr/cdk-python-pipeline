@@ -8,9 +8,10 @@
         "bucketName": "cdk-workshop-assets",
         "targetStack": "cdk-workshop-stack-qa" 
       },
-      "codeCommit": {
-        "repositoryName": "cdk_workshop",
-        "branch": "main"
+      "github": {
+        "repositoryName": "cdk-python-workshop",
+        "owner": "freelandr",
+        "oauthSecretName": "github-oauth-token"
       }
     }
   }
