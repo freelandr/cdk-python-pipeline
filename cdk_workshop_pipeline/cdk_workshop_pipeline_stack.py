@@ -1,7 +1,7 @@
 from aws_cdk import Stack
+from aws_cdk import SecretValue
 from constructs import Construct
 from aws_cdk.aws_s3 import Bucket
-from awk_cdk.core import SecretValue
 from aws_cdk.aws_codebuild import (
     BuildSpec,
      PipelineProject,
@@ -49,7 +49,7 @@ class CdkWorkshopPipelineStack(Stack):
                 output = source_output,
                 owner = self.context["github"]["owner"],
                 repo = self.context["github"]["repositoryName"],
-                oauthToken = SecretValue.secretsManager(self.context["github"]["oauthSecretName"]),
+                oauth_token = SecretValue.secrets_manager(self.context["github"]["oauthSecretName"]),
                 branch = "main"
             )
         )
